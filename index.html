@@ -2,45 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ProductHive - Unified</title>
-    <link rel="stylesheet" href="style.css"> </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductHive - Home</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        .page { display: none; }
+        .active { display: block; }
+        nav a { cursor: pointer; text-decoration: underline; color: blue; }
+        .product-item { border: 1px solid #ddd; margin: 10px 0; padding: 10px; }
+    </style>
+</head>
 <body>
     <header>
         <h1>ProductHive</h1>
         <nav>
-            <button onclick="showPage('home')">Home</button>
-            <button onclick="showPage('products')">Products</button>
-            <button onclick="showPage('star-rated')">Star Rated</button>
+            <a onclick="showPage('home')">Home</a> | 
+            <a onclick="showPage('products')">Products</a> |
+            <a onclick="showPage('star-rated')">Star Rated</a>
         </nav>
     </header>
 
     <hr />
 
-    <section id="home" class="page active">
+    <main id="home" class="page active">
         <img src="https://via.placeholder.com/400" alt="Product Image" />
-        <h2>Our Products</h2>
-        <button onclick="showPage('products')">View Products</button>
-    </section>
+        <section>
+            <h2>Our Products</h2>
+            <p>Smartphone, Laptop, Headphones, Smartwatch</p>
+            <button onclick="showPage('products')">View Products</button>
+        </section>
+        <section>
+            <h2>Star Rated Products</h2>
+            <button onclick="showPage('star-rated')">View Star Rated</button>
+        </section>
+    </main>
 
-    <section id="products" class="page" style="display:none;">
+    <section id="products" class="page">
         <h2>Products</h2>
         <div id="product-list"></div>
     </section>
 
-    <section id="details" class="page" style="display:none;">
+    <section id="details" class="page">
         <h2>Product Details</h2>
         <div id="product-detail-content"></div>
         <button onclick="showPage('products')">Back to Products</button>
     </section>
 
-    <section id="star-rated" class="page" style="display:none;">
+    <section id="star-rated" class="page">
         <h2>Star Rated Products</h2>
-        <p>Top Rated: Smartphone</p>
-        <p>Most Popular: Headphones</p>
+        <div class="product-item">
+            <h3>Top Rated Product</h3>
+            <p>Smartphone</p>
+        </div>
+        <div class="product-item">
+            <h3>Most Popular Among Teenagers</h3>
+            <p>Headphones</p>
+        </div>
     </section>
 
     <hr />
-    <footer>© 2026 ProductHive | By: Karan Bharti</footer>
+    <footer>
+        © 2026 ProductHive. All rights reserved.<br>
+        By: Karan Bharti
+    </footer>
 
     <script src="script.js"></script>
 </body>
