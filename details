@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Product Details</title>
+  </head>
+  <body>
+    <header>
+      <h1>ProductHive</h1>
+    </header>
+
+    <hr />
+
+    <h2>Product Details</h2>
+    <div id="product"></div>
+
+    <script>
+      const products = [
+        {
+          id: 1,
+          name: "Smartphone",
+          category: "Electronics",
+          price: "₹15,000",
+        },
+        { id: 2, name: "Laptop", category: "Electronics", price: "₹45,000" },
+        { id: 3, name: "Headphones", category: "Accessories", price: "₹2,000" },
+        { id: 4, name: "Smartwatch", category: "Wearables", price: "₹5,000" },
+      ];
+
+      const params = new URLSearchParams(window.location.search);
+      const id = parseInt(params.get("id"));
+
+      const product = products.find((p) => p.id === id);
+
+      if (product) {
+        document.getElementById("product").innerHTML =
+          "<p>Name: " +
+          product.name +
+          "</p>" +
+          "<p>Category: " +
+          product.category +
+          "</p>" +
+          "<p>Price: " +
+          product.price +
+          "</p>";
+      }
+    </script>
+
+    <hr />
+
+    <footer>© 2026 ProductHive. All rights reserved.</footer>
+  </body>
+</html>
