@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProductHive - Products</title>
+  </head>
+  <body>
+    <header>
+      <h1>ProductHive</h1>
+      <nav>
+        <a href="index.html">Home</a> | <a href="products.html">Products</a> |
+        <a href="star-rated.html">Star Rated</a>
+      </nav>
+    </header>
+
+    <hr />
+
+    <h2>Products</h2>
+
+    <div>
+      <h3>Smartphone</h3>
+      <p>Category: Electronics</p>
+      <p>Price: ₹15,000</p>
+      <a href="details.html?id=1">View Details</a>
+    </div>
+
+    <div>
+      <h3>Laptop</h3>
+      <p>Category: Electronics</p>
+      <p>Price: ₹45,000</p>
+      <a href="details.html?id=2">View Details</a>
+    </div>
+
+    <div>
+      <h3>Headphones</h3>
+      <p>Category: Accessories</p>
+      <p>Price: ₹2,000</p>
+      <a href="details.html?id=3">View Details</a>
+    </div>
+
+    <div>
+      <h3>Smartwatch</h3>
+      <p>Category: Wearables</p>
+      <p>Price: ₹5,000</p>
+      <a href="details.html?id=4">View Details</a>
+    </div>
+
+    <hr />
+
+    <footer>© 2026 ProductHive. All rights reserved.</footer>
+  </body>
+</html>
