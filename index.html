@@ -2,25 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProductHive - All-in-One</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; padding: 20px; max-width: 800px; margin: auto; }
-        nav { margin-bottom: 10px; }
-        .page { display: none; }
-        .active { display: block; }
-        .product-card { border: 1px solid #ddd; padding: 10px; margin: 10px 0; border-radius: 5px; }
-        button { cursor: pointer; padding: 8px 16px; }
-    </style>
-</head>
+    <title>ProductHive - Unified</title>
+    <link rel="stylesheet" href="style.css"> </head>
 <body>
-
     <header>
         <h1>ProductHive</h1>
         <nav>
-            <a href="#" onclick="showPage('home')">Home</a> | 
-            <a href="#" onclick="showPage('products')">Products</a> |
-            <a href="#" onclick="showPage('star-rated')">Star Rated</a>
+            <button onclick="showPage('home')">Home</button>
+            <button onclick="showPage('products')">Products</button>
+            <button onclick="showPage('star-rated')">Star Rated</button>
         </nav>
     </header>
 
@@ -28,98 +18,30 @@
 
     <section id="home" class="page active">
         <img src="https://via.placeholder.com/400" alt="Product Image" />
-        <section>
-            <h2>Our Products</h2>
-            <p>Smartphone, Laptop, Headphones, Smartwatch</p>
-            <button onclick="showPage('products')">View Products</button>
-        </section>
-        <section>
-            <h2>Star Rated Products</h2>
-            <button onclick="showPage('star-rated')">View Star Rated</button>
-        </section>
+        <h2>Our Products</h2>
+        <button onclick="showPage('products')">View Products</button>
     </section>
 
-    <section id="products" class="page">
+    <section id="products" class="page" style="display:none;">
         <h2>Products</h2>
         <div id="product-list"></div>
     </section>
 
-    <section id="details" class="page">
+    <section id="details" class="page" style="display:none;">
         <h2>Product Details</h2>
         <div id="product-detail-content"></div>
         <button onclick="showPage('products')">Back to Products</button>
     </section>
 
-    <section id="star-rated" class="page">
+    <section id="star-rated" class="page" style="display:none;">
         <h2>Star Rated Products</h2>
-        <div class="product-card">
-            <h3>Top Rated Product</h3>
-            <p>Smartphone</p>
-        </div>
-        <div class="product-card">
-            <h3>Most Popular Among Teenagers</h3>
-            <p>Headphones</p>
-        </div>
+        <p>Top Rated: Smartphone</p>
+        <p>Most Popular: Headphones</p>
     </section>
 
     <hr />
+    <footer>© 2026 ProductHive | By: Karan Bharti</footer>
 
-    <footer>
-        © 2026 ProductHive. All rights reserved.<br />
-        By: Karan Bharti
-    </footer>
-
-    <script>
-        const products = [
-            { id: 1, name: "Smartphone", category: "Electronics", price: "₹15,000" },
-            { id: 2, name: "Laptop", category: "Electronics", price: "₹45,000" },
-            { id: 3, name: "Headphones", category: "Accessories", price: "₹2,000" },
-            { id: 4, name: "Smartwatch", category: "Wearables", price: "₹5,000" },
-        ];
-
-        // Function to switch visible sections
-        function showPage(pageId) {
-            // Hide all pages
-            document.querySelectorAll('.page').forEach(page => {
-                page.classList.remove('active');
-            });
-            // Show requested page
-            document.getElementById(pageId).classList.add('active');
-        }
-
-        // Function to render the product list
-        function renderProducts() {
-            const listContainer = document.getElementById('product-list');
-            listContainer.innerHTML = '';
-            products.forEach(p => {
-                listContainer.innerHTML += `
-                    <div class="product-card">
-                        <h3>${p.name}</h3>
-                        <p>Category: ${p.category}</p>
-                        <p>Price: ${p.price}</p>
-                        <button onclick="viewDetails(${p.id})">View Details</button>
-                    </div>
-                `;
-            });
-        }
-
-        // Function to handle viewing a specific product
-        function viewDetails(id) {
-            const product = products.find(p => p.id === id);
-            const detailContainer = document.getElementById('product-detail-content');
-            
-            if (product) {
-                detailContainer.innerHTML = `
-                    <p><strong>Name:</strong> ${product.name}</p>
-                    <p><strong>Category:</strong> ${product.category}</p>
-                    <p><strong>Price:</strong> ${product.price}</p>
-                `;
-                showPage('details');
-            }
-        }
-
-        // Initial setup
-        renderProducts();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
