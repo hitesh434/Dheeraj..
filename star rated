@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Star Rated Products</title>
+  </head>
+  <body>
+    <header>
+      <h1>ProductHive</h1>
+      <nav>
+        <a href="index.html">Home</a> | <a href="products.html">Products</a> |
+        <a href="star-rated.html">Star Rated</a>
+      </nav>
+    </header>
+
+    <hr />
+
+    <h2>Star Rated Products</h2>
+
+    <div>
+      <h3>Top Rated Product</h3>
+      <p>Smartphone</p>
+    </div>
+
+    <div>
+      <h3>Most Popular Among Teenagers</h3>
+      <p>Headphones</p>
+    </div>
+
+    <hr />
+
+    <footer>
+      © 2026 ProductHive. All rights reserved.
+      <br /><br />
+      By: Karan Bharti
+    </footer>
+  </body>
+</html>
